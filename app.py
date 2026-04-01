@@ -70,7 +70,7 @@ def get_gpt_response(query):
     return response['choices'][0]['message']['content']  # Extract and return the response message
 
 # Streamlit App Layout
-st.title("METU IE Summer Practice Chatbot")
+st.title("METU IE Summer Practice Chatbot - Group 2")
 st.write("Welcome! Ask me any questions regarding METU IE Summer Practice.")
 
 # Create an input field for the user to ask questions
