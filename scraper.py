@@ -9,9 +9,7 @@ BASE_URLS = {
 }
 
 def scrape_page(url):
-    """
-    Fetch a page and return all relevant content as plain text.
-    """
+   
     headers = {"User-Agent": "Mozilla/5.0"}
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
@@ -20,7 +18,7 @@ def scrape_page(url):
     soup = BeautifulSoup(res.text, "html.parser")
 
     # Try to find content within specific divs or sections
-    content_section = soup.find("div", class_="field-item")  # Common container class for content
+    content_section = soup.find("div", class_="field-item")  
     if not content_section:
         # If not found, fall back to body content
         content_section = soup.find("body")
