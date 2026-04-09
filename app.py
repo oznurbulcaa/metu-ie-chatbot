@@ -1,13 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
-from scraper import scrape_page, BASE_URLS  # Correct import
+from scraper import scrape_page, BASE_URLS  
 
-# API Anahtarını yapılandır
+# API Key
 if "GEMINI_API_KEY" in st.secrets:
     api_key = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=api_key)
 else:
-    st.error("⚠️ API Anahtarı bulunamadı! Lütfen Streamlit Cloud ayarlarından Secrets kısmını doldurun.")
+    st.error("⚠️ API Key not found! Please fill in the Secrets section in Streamlit Cloud settings.")
     st.stop()
 
 
