@@ -58,7 +58,7 @@ prompt = f"""
 #Function to get responses from Gemini
 def ask_gemini(user_question):
     model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+        model_name="models/gemini-1.5-flash",
         system_instruction=prompt
     )
    
@@ -66,13 +66,13 @@ def ask_gemini(user_question):
     return response.text
 
 # Function to get responses from OpenAI's GPT (Updated for new API)
-def get_gpt_response(query):
+"""def get_gpt_response(query):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Change to gpt-3.5-turbo if gpt-4 is not available
     messages=[{"role": "system","content":prompt},{"role": "user", "content": query}],  # Format the message as a list
         max_tokens=200
     )
-    return response['choices'][0]['message']['content']  # Extract and return the response message
+    return response['choices'][0]['message']['content']  # Extract and return the response message"""
 
 # Streamlit App Layout
 st.title("METU IE Summer Practice Chatbot - Group 2")
